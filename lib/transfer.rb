@@ -18,7 +18,9 @@ class Transfer
       "Transaction rejected. Please chack you account balance."
     elsif @status == "complete"
       nil
-    else @sender.valid?
+    else 
+      if @status == "complete" 
+      else @sender.valid?
         @sender.balance -= @amount
         @receiver.balance += @amount
         @status = "complete"
